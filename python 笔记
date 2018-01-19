@@ -1,0 +1,23 @@
+#python 笔记1
+
+## 执行方式
+./pycode.py 执行
+python pycode.py
+
+编译 
+import py_compile
+py_compile.compile('1.py')
+
+查看内存地址
+id() 函数
+
+python 字符串切片a[2:3]
+三个参数 1起2止3步长 
+步长为1或者-1 表示从左或者从右开始
+
+#元组  tuple 使用() 定义
+元组可以使用 索引 和 切片
+t=('jack',123,'f');
+name,age,d=t
+
+#python 中的列表 使用[] 定义
