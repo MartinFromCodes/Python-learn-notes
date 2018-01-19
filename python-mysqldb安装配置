@@ -1,0 +1,31 @@
+# CentOS下安装python-mysqldb
+
+1、``` yum install python-devel mysql-devel zlib-devel openssl-devel ```
+
+2、 http://pypi.python.org/pypi/MySQL-python/#downloads 下载安装包
+
+wget https://pypi.python.org/pypi/MySQL-python/1.2.5
+
+3、 安装MySQL-python 
+```
+tar -zxvf MySQL-python-1.2.3.tar.gz
+
+cd   MySQL-python-1.2.3
+
+
+```
+
+4、 如果　报EnvironmentError: mysql_config not found
+python 版本是2.7.x
+此时执行 find / -name mysql_config 在/usr/bin/下发现了这个文件
+然后修改MySQL-python-1.2.3目录下的site.cfg文件
+去掉mysql_config=XXX这行的注释，并改成mysql_config=/usr/bin/mysql_config（以mysql_config文件所在机器上的目录为准）
+
+5 然后 进入到 MySQL-python-1.2.3 目录再执行  
+```
+cd   MySQL-python-1.2.3
+python setup.py build
+
+python setup.py install
+
+```
